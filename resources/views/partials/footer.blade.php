@@ -113,10 +113,12 @@
       if(qty >0){
         qty--;
         $("#qty"+id).val(qty);
+        $("#qtys").val(qty);
         var getPrice = $("#price"+id).val();
         getPrice = parseFloat(getPrice).toFixed(2);
         var totalAmt = getPrice*qty;
         $("#total"+id).text(totalAmt);
+        $("#grandtotal").val(totalAmt);
       }
   });
   $(".plus").click(function(){
@@ -124,10 +126,12 @@
       var qty = $("#qty"+id).val();
       qty++;
       $("#qty"+id).val(qty);
+      $("#qtys").val(qty);
       var getPrice = $("#price"+id).val();
       getPrice = parseFloat(getPrice).toFixed(2);
       var totalAmt = getPrice*qty;
       $("#total"+id).text(totalAmt);
+      $("#grandtotal").val(totalAmt);
       
   });
   </script>

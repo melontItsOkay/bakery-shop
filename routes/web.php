@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Shop;
+use App\Http\Controllers\CheckoutOrder;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\BaseWebsite;
 use Illuminate\Support\Facades\Route;
@@ -33,5 +34,9 @@ Route::get('/my-order', [Dashboard::class, 'myorder'])->name('dashboard.myorder'
 Route::get('/logout', [Dashboard::class, 'logout']);
 
 Route::get('/shop/all', [Shop::class, 'index'])->name('shop.base');
+
+Route::post('/checkout', [CheckoutOrder::class, 'index'])->name('checkout.index');
+Route::get('/checkout', [CheckoutOrder::class, 'checkout'])->name('checkout.checkout');
+Route::post('/delete', [CheckoutOrder::class, 'delete'])->name('checkout.delete');
 
 Route::get('admin/page', [Dashboard::class, 'adminpages'])->name('admins')->middleware('is_admin');

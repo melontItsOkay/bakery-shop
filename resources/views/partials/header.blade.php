@@ -19,9 +19,6 @@
                 <li class="dropdown {{ (request()->segment(1) == 'about-us') ? 'active' : '' }}">
                   <a href="{{ url('about-us') }}">About Us</a>
                 </li>
-                <li class="dropdown {{ (request()->segment(1) == 'store-locations') ? 'active' : '' }}">
-                  <a href="#">Store Locations</a>
-                </li>
               </ul>
             </nav>
           </div>

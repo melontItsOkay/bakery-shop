@@ -96,7 +96,7 @@
                             Quantity:
                           </td>
                           <td>
-                            <button type="submit" class="minus btn" data-id="1">-</button> <input type="text" class="txt qty input-small search-query text-center" id="qty1" value="0"> <button type="submit" class="plus btn"  data-id="1">+</button>
+                            <button class="minus btn" data-id="1">-</button> <input type="text" class="txt qty input-small search-query text-center" id="qty1" value="0"> <button  class="plus btn"  data-id="1">+</button>
                             <input type="hidden" name="price" class="txt price" id="price1" value="{{ $viewproduct['price'] }}" />
                           </td>
                         </tr>
@@ -111,10 +111,17 @@
                     </tbody>
                 </table>
                 @Auth
-                <p> <button class="btn btn-success btn-large btn-primary" type="button">Checkout Now</button> <button class="btn btn-danger btn-large" type="button"><i class="icon-heart-empty"></i></button> </p>
+                <form action="{{ route('checkout.index') }}" method="post">
+                  <input type="num" name="grandtotal" id="grandtotal" value="" hidden />
+                  <input type="num" name="product" value="{{ $viewproduct['name_product'] }}" hidden />
+                  <input type="num" name="qtys" id="qtys" value="" hidden />
+                  @csrf
+                <p> <button class="btn btn-success btn-large btn-primary" type="submit">Checkout Now</button> <button class="btn btn-danger btn-large" type="button"><i class="icon-heart-empty"></i></button> </p>
+                </form>
                 @else
                 <h5>Please <b><a href="{{ url('login') }}">login</a></b> first before checkout.</h5>
                 @endAuth
+              
             </div>
           </aside>
         </div>

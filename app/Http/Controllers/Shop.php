@@ -11,7 +11,7 @@ class Shop extends Controller
 {
     public function index(Request $request)
     {
-        $allproduct = Base::paginate(10);
+        $allproduct = Base::paginate(15);
         $category = Category::get();
 
         if($request->ajax())

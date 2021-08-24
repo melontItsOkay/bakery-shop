@@ -102,7 +102,7 @@
 					</a>
             </div>
             <div class="entry-meta">
-              <a href="#"><i class="icon-square icon-48 icon-shopping-cart left"></i></a>
+              <a href="product/{{ $item['slug'] }}"><i class="icon-square icon-48 icon-shopping-cart left"></i></a>
             </div>
             <!-- end .entry-meta -->
             <div class="entry-body">

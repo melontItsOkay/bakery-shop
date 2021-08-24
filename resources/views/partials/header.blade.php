@@ -14,10 +14,10 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown {{ (request()->segment(1) == 'shop') ? 'active' : '' }}">
-                  <a href="shop/all">Shop</a>
+                  <a href="{{ url('shop/all') }}">Shop</a>
                 </li>
-                <li class="dropdown {{ (request()->segment(1) == 'about') ? 'active' : '' }}">
-                  <a href="#">About Us</a>
+                <li class="dropdown {{ (request()->segment(1) == 'about-us') ? 'active' : '' }}">
+                  <a href="{{ url('about-us') }}">About Us</a>
                 </li>
                 <li class="dropdown {{ (request()->segment(1) == 'store-locations') ? 'active' : '' }}">
                   <a href="#">Store Locations</a>

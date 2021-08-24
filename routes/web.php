@@ -19,6 +19,7 @@ use App\Http\Controllers\Authentication;
 
 Route::get('/', [BaseWebsite::class,'index'])->name('base');
 Route::get('/product/{slug}', [BaseWebsite::class, 'product'])->name('base.product');
+Route::get('/about-us', [BaseWebsite::class, 'aboutus'])->name('base.aboutus');
 
 Route::get('/login', [Authentication::class, 'index'])->name('authentication')->middleware('guest');
 Route::post('/login', [Authentication::class, 'auth'])->name('auth');

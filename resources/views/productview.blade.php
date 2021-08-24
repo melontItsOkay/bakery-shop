@@ -52,7 +52,23 @@
                     <p>{{ $viewproduct['description'] }}</p> 
                 </div>
                 <div class="tab-pane" id="tab2">
-                    <p>sasa</p>
+                  <div class="media-body">
+
+                    
+
+                    @forelse ($review as $item)
+                    
+                    <h5 class="media-heading">{{ $item->name }}</h5>
+                    <p>
+                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    </p>
+                    @empty
+                    
+                    <p>No Review :)</p>
+
+                    @endforelse
+                    
+                  </div>
                 </div>
             </div> 
         </div>
